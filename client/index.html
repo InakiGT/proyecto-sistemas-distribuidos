@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><button id="insertar-nav">Insertar</button></li>
+            <li><button id="buscar-nav">Buscar</button></li>
+            <li><button id="ver-nav">Ver todo</button></li>
+            <li><button id="eliminar-nav">Eliminar</button></li>
+            <li><button id="actualizar-nav">Actualizar</button></li>
+        </ul>
+    </nav>
+
+    <section id="insertar">
+        <h1>Insertar</h1>
+        <form id="insertar-form">
+            <div class="form-field">
+                <label for="insertar-id">Id: </label>
+                <input id="insertar-id" type="number" />
+            </div>
+            <div class="form-field">
+                <label for="insertar-name">Name: </label>
+                <input  id="insertar-name" type="text" />
+            </div>
+            <div class="form-field">
+                <label for="insertar-type">Diamond Type: </label>
+                <input  id="insertar-type" type="text" />
+            </div>
+            <div class="form-field">
+                <label for="insertar-location">Location: </label>
+                <input  id="insertar-location" type="text" />
+            </div>
+            
+            <button type="submit">Insertar</button>
+        </form>
+
+        <div class="data" id="insertar-data">
+ 
+        </div>
+    </section>
+
+    <section id="buscar">
+        <h1>Búscar</h1>
+        <form id="buscar-form">
+            <div class="form-field">
+                <label for="buscar-id">Id:</label>
+                <input id="buscar-id" type="number"/>
+            </div>
+            
+            <button type="submit">Búscar</button>
+        </form>
+
+        <div class="data" id="buscar-data">
+
+        </div>
+    </section>
+
+    <section id="todo">
+        <h1>Ver todo</h1>
+        <div>
+            <button id="ver-todo-button">Ver todo</button>
+        </div>
+
+        <div class="data" id="todo-data">
+
+        </div>
+    </section>
+
+    <section id="eliminar">
+        <h1>Eliminar</h1>
+        <form id="eliminar-form">
+            <div class="form-field">
+                <label for="eliminar-id">Id:</label>
+                <input id="eliminar-id" type="number"/>
+            </div>
+            
+            <button type="submit">Eliminar</button>
+        </form>
+
+        <div class="data" id="eliminar-data">
+
+        </div>
+    </section>
+
+    <section id="actualizar">
+        <h1>Actualizar</h1>
+        <form id="actualizar-form">
+            <div class="form-field">
+                <label for="actualizar-id">Id:</label>
+                <input id="actualizar-id" type="number" />
+            </div>
+            <div class="form-field">
+                <label for="actualizar-name">Name:</label>
+                <input id="actualizar-name"  type="text" />
+            </div>
+            <div class="form-field">
+                <label for="actualizar-type">Diamond Type:</label>
+                <input  id="actualizar-type" type="text" />
+            </div>
+            <div class="form-field">
+                <label for="actualizar-location">Location:</label>
+                <input id="actualizar-location"  type="text" />
+            </div>
+            
+            <button type="submit">Actualizar</button>
+        </form>
+
+        <div class="data" id="actualizar-data">
+
+        </div>
+    </section>
+    <script src="./index.js"></script>
+    <script src="./api.js"></script>
+    <script src="./actions.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* ======= GLOBALES ======= */
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 20px;
+}
+
+section {
+    display: none;
+}
+
+form {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+li {
+    margin: 0;
+}
+
+button {
+    margin: 0;
+    padding: 10px;
+    border: none;
+    background-color: #2e2b2b;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #1d1b1b;
+}
+
+/* ====== CLASES ====== */
+
+.form-field {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.data {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.success {
+    padding: 15px;
+    background-color: #1d1b1b;
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+}
+
+.error {
+    padding: 15px;
+    background-color: #e22020;
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+}
+
+.info {
+    font-size: 15px;
+}
