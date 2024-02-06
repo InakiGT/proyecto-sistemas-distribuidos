@@ -7,7 +7,9 @@ const actualizarForm = document.getElementById('actualizar-form');
 
 const api = new Api('https://pokeapi.co/api/v2/ability/');
 
-insertarForm.addEventListener('submit', () => {
+insertarForm.addEventListener('submit', ( e ) => {
+    e.preventDefault();
+
     const id = document.getElementById('insertar-id').value;
     const name = document.getElementById('insertar-name').value;
     const diamond_type = document.getElementById('insertar-type').value;
@@ -17,20 +19,26 @@ insertarForm.addEventListener('submit', () => {
     api.insert(id, name, diamond_type, location, content);
 });
 
-buscarForm.addEventListener('submit', () => {
+buscarForm.addEventListener('submit', ( e ) => {
+    e.preventDefault();
+
     const id = document.getElementById('buscar-id').value;
     const content = document.getElementById('buscar-data');
     
     api.select(id, content);
 });
 
-verTodoButton.addEventListener('click', () => {
+verTodoButton.addEventListener('click', ( e ) => {
+    e.preventDefault();
+
     const content = document.getElementById('todo-data');
     
     api.select(null, content, content);
 });
 
-eliminarForm.addEventListener('submit', (e) => {
+eliminarForm.addEventListener('submit', ( e ) => {
+    e.preventDefault();
+
     const id = document.getElementById('eliminar-id').value;
     const content = document.getElementById('eliminar-data');
     
@@ -38,6 +46,8 @@ eliminarForm.addEventListener('submit', (e) => {
 })
 
 actualizarForm.addEventListener('submit', ( e ) => {
+    e.preventDefault();
+
     const id = document.getElementById('actualizar-id').value;
     const name = document.getElementById('actualizar-name').value;
     const diamond_type = document.getElementById('actualizar-type').value;
