@@ -48,7 +48,7 @@ class Api {
         this.url = this.baseUrl;
         fetch(this.url, {
             method: 'POST',
-            headers: { 'Conten-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 id,
                 name,
@@ -92,7 +92,7 @@ class Api {
         this.url = this.baseUrl + `?id=${id}`;
         fetch(this.url, {
             method: 'PUT',
-            headers: { 'Conten-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 name,
                 diamond_type,
