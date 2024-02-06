@@ -14,7 +14,7 @@ class Api {
         }).then(( response ) => response.json())
         .then(( data ) => {
             const element = document.createElement('p');
-            if (data.status === 'OK') {
+            if (data.statusMsg === 'OK') {
                 const p = document.createElement('p');
                 const text = document.createTextNode('Consulta hecha correctamente');
                 const info = document.createTextNode(data.data);
@@ -49,16 +49,16 @@ class Api {
         fetch(this.url, {
             method: 'POST',
             headers: { 'Conten-Type': 'application/json' },
-            body: {
+            body: JSON.stringify({
                 id,
                 name,
                 diamond_type,
                 location,
-            },
+            }),
         }).then(( response ) => response.json())
         .then(( data ) => {
             const element = document.createElement('p');
-            if (data.status === 'OK') {
+            if (data.statusMsg === 'Created') {
                 const p = document.createElement('p');
                 const text = document.createTextNode('Elemento insertado correctamente');
                 const info = document.createTextNode(data.data);
@@ -78,7 +78,6 @@ class Api {
                 content.appendChild(element);
             }
         }).catch(() => {
-            const p = document.createElement('p');
             const element = document.createElement('p');
             const text = document.createTextNode('Error en la petición');
 
@@ -94,15 +93,15 @@ class Api {
         fetch(this.url, {
             method: 'PUT',
             headers: { 'Conten-Type': 'application/json' },
-            body: {
+            body: JSON.stringify({
                 name,
                 diamond_type,
                 location,
-            },
+            }),
         }).then(( response ) => response.json())
         .then(( data ) => {
             const element = document.createElement('p');
-            if (data.status === 'OK') {
+            if (data.statusMsg === 'OK') {
                 const p = document.createElement('p');
                 const text = document.createTextNode('Elemento actualizado correctamente');
                 
@@ -138,7 +137,7 @@ class Api {
         }).then(( response ) => response.json())
         .then(( data ) => {
             const element = document.createElement('p');
-            if (data.status === 'OK') {
+            if (data.statusMsg === 'OK') {
                 const text = document.createTextNode('Elemento eliminado correctamente');
                 
                 element.classList = 'success';

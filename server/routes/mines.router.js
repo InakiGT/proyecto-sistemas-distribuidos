@@ -49,6 +49,7 @@ router.post('/', async (req, res) => {
     try {
         const dbConn = await connectDB();
         const mine = req.body;
+        console.log(mine);
         
         await dbConn.execute('INSERT INTO mines (id, name, diamond_type, location) VALUES (:id, :name, :diamond_type, :location)', mine);
         res.status(201).json({
@@ -71,6 +72,7 @@ router.put('/:id', async (req, res) => {
         const { id } = req.params;
         const data = req.body;
         data.id = id;
+        console.log(data);
         
         await dbConn.execute('UPDATE mines SET name = :name, diamond_type = :diamond_type, location = :location WHERE id = :id', data);
         
