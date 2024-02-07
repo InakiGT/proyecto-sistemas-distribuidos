@@ -25,6 +25,7 @@ class Api {
 
                 element.appendChild(text);
                 content.appendChild(element);
+                content.appendChild(p);
             } else {
                 const text = document.createTextNode('Error en el servidor');
 
@@ -69,6 +70,7 @@ class Api {
                 
                 element.appendChild(text);
                 content.appendChild(element);
+                content.appendChild(p);
             } else {
                 const text = document.createTextNode('Error en el servidor');
 
@@ -112,6 +114,7 @@ class Api {
                 
                 element.appendChild(text);
                 content.appendChild(element);
+                content.appendChild(p);
             } else {
                 const text = document.createTextNode('Error en el servidor');
 
