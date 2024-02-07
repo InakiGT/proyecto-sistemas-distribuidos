@@ -13,16 +13,16 @@ class Api {
             method: 'GET',
         }).then(( response ) => response.json())
         .then(( data ) => {
+            console.log(data);
             const element = document.createElement('p');
             if (data.statusMsg === 'OK') {
                 const p = document.createElement('p');
                 const text = document.createTextNode('Consulta hecha correctamente');
-                const info = document.createTextNode(data.data);
-
+                
+                p.textContent = data.data;
                 element.classList = 'success';
                 p.classList = 'info';
-                
-                p.appendChild(info);
+
                 element.appendChild(text);
                 content.appendChild(element);
             } else {
@@ -57,16 +57,16 @@ class Api {
             }),
         }).then(( response ) => response.json())
         .then(( data ) => {
+            console.log(data);
             const element = document.createElement('p');
             if (data.statusMsg === 'Created') {
                 const p = document.createElement('p');
                 const text = document.createTextNode('Elemento insertado correctamente');
-                const info = document.createTextNode(data.data);
                 
+                p.textContent = data.data;
                 element.classList = 'success';
                 p.classList = 'info';
                 
-                p.appendChild(info);
                 element.appendChild(text);
                 content.appendChild(element);
             } else {
@@ -100,15 +100,16 @@ class Api {
             }),
         }).then(( response ) => response.json())
         .then(( data ) => {
+            console.log(data);
             const element = document.createElement('p');
             if (data.statusMsg === 'OK') {
                 const p = document.createElement('p');
                 const text = document.createTextNode('Elemento actualizado correctamente');
                 
+                p.textContent = data.data;
                 element.classList = 'success';
                 p.classList = 'info';
                 
-                p.appendChild(info);
                 element.appendChild(text);
                 content.appendChild(element);
             } else {
@@ -136,6 +137,7 @@ class Api {
             method: 'DELETE',
         }).then(( response ) => response.json())
         .then(( data ) => {
+            console.log(data);
             const element = document.createElement('p');
             if (data.statusMsg === 'OK') {
                 const text = document.createTextNode('Elemento eliminado correctamente');

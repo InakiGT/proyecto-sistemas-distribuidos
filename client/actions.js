@@ -5,7 +5,7 @@ const eliminarForm = document.getElementById('eliminar-form');
 const actualizarForm = document.getElementById('actualizar-form');
 
 
-const api = new Api('https://2806-107e-0012-39c5-b225-aaff-fe22-f90b:3000/api/v1/mines/');
+const api = new Api('http://2806-107e-0012-39c5-b225-aaff-fe22-f90b:3000/api/v1/mines/');
 
 insertarForm.addEventListener('submit', ( e ) => {
     e.preventDefault();
