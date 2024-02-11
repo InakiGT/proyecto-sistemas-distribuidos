@@ -16,17 +16,17 @@ class Api {
             console.log(data);
             const element = document.createElement('p');
             if (data.statusMsg === 'OK') {
-                data.data.forEach(element => {     
+                data.data.forEach(d => {     
                     const p1 = document.createElement('p');
                     const p2 = document.createElement('p');
                     const p3 = document.createElement('p');
                     const p4 = document.createElement('p');
                     const text = document.createTextNode('Consulta hecha correctamente');
                     
-                    p1.textContent = element[0];
-                    p2.textContent = element[1];
-                    p3.textContent = element[2];
-                    p4.textContent = element[3];
+                    p1.textContent = d[0];
+                    p2.textContent = d[1];
+                    p3.textContent = d[2];
+                    p4.textContent = d[3];
                     element.classList = 'success';
                     p1.classList = 'info';
                     p2.classList = 'info';
