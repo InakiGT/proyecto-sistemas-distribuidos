@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
     try {
         const dbConn = await connectDB();
         const { id } = req.params;
-        const data = (await dbConn.execute('SELECT * FROM mines WHERE id = :id', id)).rows;
+        const data = (await dbConn.execute('SELECT * FROM mines WHERE id = :id', { id })).rows;
         await dbConn.close();
 
         console.log(data);
@@ -101,7 +101,7 @@ router.delete('/:id', async (req, res) => {
         const dbConn = await connectDB();
         const { id } = req.params;
 
-        await dbConn.execute('DELETE FROM mines WHERE id = :id', id);
+        await dbConn.execute('DELETE FROM mines WHERE id = :id', { id });
         await dbConn.commit();
 
         res.status(200).json({
@@ -110,6 +110,11 @@ router.delete('/:id', async (req, res) => {
         });
     } catch(err) {
         console.error(err);
+
+        res.status(500).json({
+            statusMsg: 'Internal Server Error',
+            data: null,
+        });
     }
 });
 

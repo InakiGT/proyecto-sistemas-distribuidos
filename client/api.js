@@ -8,7 +8,7 @@ class Api {
     }
 
     select(id, content) {
-        this.url = id ? this.baseUrl + `?id=${id}` : this.baseUrl;
+        this.url = id ? this.baseUrl + `/${id}` : this.baseUrl;
         fetch(this.url, {
             method: 'GET',
         }).then(( response ) => response.json())
@@ -16,16 +16,30 @@ class Api {
             console.log(data);
             const element = document.createElement('p');
             if (data.statusMsg === 'OK') {
-                const p = document.createElement('p');
-                const text = document.createTextNode('Consulta hecha correctamente');
-                
-                p.textContent = data.data;
-                element.classList = 'success';
-                p.classList = 'info';
-
-                element.appendChild(text);
-                content.appendChild(element);
-                content.appendChild(p);
+                data.data.forEach(element => {     
+                    const p1 = document.createElement('p');
+                    const p2 = document.createElement('p');
+                    const p3 = document.createElement('p');
+                    const p4 = document.createElement('p');
+                    const text = document.createTextNode('Consulta hecha correctamente');
+                    
+                    p1.textContent = element[0];
+                    p2.textContent = element[1];
+                    p3.textContent = element[2];
+                    p4.textContent = element[3];
+                    element.classList = 'success';
+                    p1.classList = 'info';
+                    p2.classList = 'info';
+                    p3.classList = 'info';
+                    p4.classList = 'info';
+    
+                    element.appendChild(text);
+                    content.appendChild(element);
+                    content.appendChild(p1);
+                    content.appendChild(p2);
+                    content.appendChild(p3);
+                    content.appendChild(p4);
+                });
             } else {
                 const text = document.createTextNode('Error en el servidor');
 
@@ -91,7 +105,7 @@ class Api {
     }
 
     update(id, name, diamond_type, location, content) {
-        this.url = this.baseUrl + `?id=${id}`;
+        this.url = this.baseUrl + `/${id}`;
         fetch(this.url, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -135,7 +149,7 @@ class Api {
     }
 
     delete(id, content) {
-        this.url = this.baseUrl + `?id=${id}`;
+        this.url = this.baseUrl + `/${id}`;
         fetch(this.url, {
             method: 'DELETE',
         }).then(( response ) => response.json())
